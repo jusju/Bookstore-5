@@ -1,8 +1,10 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Server Programming with Spring Boot</title>
+<title>Bookstore:Show List</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"
+	th:href="@{css/bootstrap.min.css}" />
 <style>
 table {
 	border-collapse: separate;
@@ -24,7 +26,7 @@ th, td {
 <body>
 
 	<h1>Bookstore</h1>
-	<table>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Author</th>
@@ -32,18 +34,22 @@ th, td {
 				<th>Year</th>
 				<th>ISBN</th>
 				<th>Price</th>
+				<th>Category</th>
 			</tr>
 		</thead>
 		<tbody>
-
 			<tr th:each="book : ${bookList}">
 				<td><span th:text="${book.author}"> Author </span></td>
 				<td><span th:text="${book.title}"> Title </span></td>
 				<td><span th:text="${book.year}"> Year </span></td>
 				<td><span th:text="${book.isbn}"> ISBN </span></td>
 				<td><span th:text="${book.price}"> Price </span></td>
+				<td><span th:text="${book.category.name}"> Category </span></td>
+				<td><a th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger">Delete</a></td>
 			</tr>
 		</tbody>
 	</table>
+	<a href="/add" class="btn btn-success">Add Book</a>
 </body>
 </html>
