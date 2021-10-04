@@ -56,7 +56,7 @@ th, td {
 				<td><span th:text="${book.price}"> Price </span></td>
 				<td><span th:text="${book.category.name}"> Category </span></td>
 				<td><a th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
-				<td sec:authorize="hasRole('ADMIN')"><a
+				<td sec:authorize="hasAuthority('ADMIN')"><a
 					th:href="@{/delete/{id}(id=${book.id})}"
 					class="btn btn-xs btn-danger">Delete</a></td>
 			</tr>
