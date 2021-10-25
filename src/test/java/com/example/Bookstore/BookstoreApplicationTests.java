@@ -21,4 +21,6 @@ class BookstoreApplicationTests {
 	public void contextLoads() throws Exception {
 		assertThat(controller).isNotNull();
 	}
+	
+	//Initial Heroku deployment: https://tan-bookstore-backend-app.herokuapp.com/login
 }
