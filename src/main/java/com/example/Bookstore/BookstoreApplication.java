@@ -55,8 +55,8 @@ public class BookstoreApplication {
 			// Create users: admin/admin user/user
 			User user1 = new User("user", "USER", "$2a$10$Ho3mcGwGAiE/y896/SeEvus89L7SNS8h8EHqvO2UGjqYc2JARr..K");
 			User user2 = new User("admin", "ADMIN", "$2a$10$lrthSAfYPE5eFJTFNJeWOej.wUST/FrUUKfq71Bxz4xxcmNLy4cvW");
-			urepository.save(user1);
-			urepository.save(user2);
+			//urepository.save(user1);
+			//urepository.save(user2);
 
 			log.info("fetch all books");
 			for (Book fbook : repository.findAll()) {
